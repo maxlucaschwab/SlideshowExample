@@ -23,6 +23,14 @@
             }
             create() {
                 this.add.text(10,10,"I am the body scene.");
+                let box = this.add.text(300, 100,
+`Here
+is some
+multi-line text.
+
+I hope it shows correctly even though this last line is very long.`
+                );
+
                 let thing = this.add.circle(150, 150, 100, 0xff0000);
                 this.add.tween({
                     targets: thing,
