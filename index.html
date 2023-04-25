@@ -23,6 +23,22 @@
             }
             create() {
                 this.add.text(10,10,"I am the body scene.");
+                let thing = this.add.circle(150, 150, 100, 0xff0000);
+                this.add.tween({
+                    targets: thing,
+                    scale: {from: 0, to: 1},
+                    duration: 1000
+                });
+
+                this.time.delayedCall(2000, () => {
+                    this.cameras.main.fadeOut(2000, 255,0,0);
+                });
+
+                this.time.delayedCall(5000, () => {
+                    this.scene.start('intro');
+                })
+
+                this.input.on('pointerdown', () => this.scene.start('intro'));
             }
         }
 
